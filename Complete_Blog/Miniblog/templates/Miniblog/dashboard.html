@@ -1,0 +1,67 @@
+{% extends 'Miniblog/base.html' %}
+{% load static %}
+
+ {% comment %} this is the message popup in the dashboard  {% endcomment %}
+{% block msg %}
+  {% if messages %}
+    {% for message in messages %}
+      <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show mt-5 " {% endif %} ><strong> {{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&nbsp;</span>
+      </button>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endblock msg %}
+
+{% comment %} This is for the dashbord page and Here we Will Show admin name {% endcomment %}
+{% block side %}
+<div class="col-sm-2 text-white my-5 text-center">
+  <h4 class="my-5">Profile</h4>
+  <h5>{{full_name}}</h5>
+  {% for group in groups %}
+    <p>{{group.name}}</p>
+  {% endfor %}
+</div>
+{% endblock side %}
+
+{% comment %} this is main content of the dashboard page {% endcomment %}
+{% block content %}
+<div class="col-sm-10">
+  <h1 class='py-5 text-center'>This is Dashboard page</h1>
+  <a href="{% url 'addpost' %}" class="btn btn-success">Add Post</a>
+  <h4 class=" text-center alert alert-success mt-3" >Show post Information Here</h4>
+  {% if posts %}
+    <table class="table table-success table-striped mb-5">
+      <thead class="">
+        <tr class="text-center">
+          <th class="col" style="width:3%">ID</th>
+          <th class="col" style="width:25%">Title</th>
+          <th class="col" style="width:57%">Description</th>
+          <th class="col" style="width:15%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        <tr>
+          <th class="row px-5">{{post.id}}</th>
+          <td>{{post.title}}</td>
+          <td>{{post.desc}}</td>
+          <td class="text-center">
+            <a href="{% url 'updatepost' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+            {% if perms.Miniblog.delete_post %}
+              <form action="{% url 'deletepost' post.id %}" method="POST" class="d-inline">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+  <h4 class="text-center alert alert-warning mt-5">No Record Found</h4>
+  {% endif %}
+</div>
+{% endblock content %}

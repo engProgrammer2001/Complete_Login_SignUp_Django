@@ -1,0 +1,17 @@
+{% extends 'Miniblog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-sm-10">
+    <h3 class="text-white py-5">DashBoard Add/Post page</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Add" class="btn btn-success">
+        <a href="{% url 'dashboard' %}" class="btn btn-danger">Go Dashboard</a>
+    </form>
+
+
+</div>
+{% endblock content %}

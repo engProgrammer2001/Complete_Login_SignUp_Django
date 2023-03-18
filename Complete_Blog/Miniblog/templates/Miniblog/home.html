@@ -1,0 +1,17 @@
+{% extends 'Miniblog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-sm-10">
+    {% for post in posts %} 
+    <main class="container">
+        <div class="bg-dark p-5 rounded jumbotron jumbotron-fluid">
+        <h1>{{post.title}}</h1>
+        <p class="lead">{{post.desc}}</p>
+        </div>
+    </main>
+    {% endfor %}
+  
+    
+    </div>
+{% endblock content %}

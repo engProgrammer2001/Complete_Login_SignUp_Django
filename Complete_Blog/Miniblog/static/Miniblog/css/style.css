@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(75,74,75);
+    color: antiquewhite;
+    /* color: red; */
+}
+.collapse{
+    margin-left: 40px;
+}
+.nav-link{
+    color: antiquewhite;
+    font-size: 19px;
+    margin: 3px 13px;
+    font-weight: bold;
+}
+.nav-link:hover{
+    color: rgb(128, 123, 117);
+}
+.logo{
+    color: antiquewhite;
+    font-size: 23px;
+    font-weight: bold;
+}
+.logo span{
+    color: red;
+    font-size: 40px;
+
+}
+.jumbotron{
+    margin-top: 50px;
+}
+.jumbotron h1{
+    font-weight: bold;
+}
+.lead{
+    margin-top: 4%;
+}
+
+/* This is the about page code  */
+.aboutHeading{
+    margin-top: 7%;
+    font-weight: bold;
+}
+.para{
+    margin: 12px 0px;
+}
+
+/* This is contact page  */
+
+.contactHeading{
+    margin: 5% 0%;
+
+}
+.form-label{
+    font-weight: bold;
+    font-size: 18px;
+}
+.form-control{
+    background-color:rgb(177,168,168) ;
+}
+.btn{
+    margin: 23px 0px;
+}
+
+/* This is the signup page style code  */
+
+.signupHeading{
+    margin: 4% 0%;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+
+}
+.form-group label{
+    font-size: 18px;
+    font-weight: bold;
+}
+.form-group small{
+    font-weight: bold;
+    font-size: 17px;
+}
+.loginform{
+    margin: 4% 0%;
+
+}
+.loginheading {
+    font-size: 45px;
+    margin: 4% 0%;
+    align-items: center;
+    font-weight: bold;
+    color: red;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsBlog - Site</title>
+    <link rel="stylesheet" href="{% static 'Miniblog/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Miniblog/css/style.css' %}">
+</head>
+<body>
+    {% comment %} this is common nav bar for the every page in this projects {% endcomment %}
+    <div class="container-fluid bg-dark">
+        {% include "Miniblog/navbar.html" %}
+    </div>
+
+    {% comment %} this is the main blog for the projects and this will change acording to page {% endcomment %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block msg %}
+
+                {% endblock msg %}
+            </div>
+        </div>
+        <div class="row">
+            {% block side %}
+            
+            {% endblock side %}
+
+            {% block content %}
+            
+            {% endblock content %}
+        </div>
+    </div>
+
+
+
+
+    <script src="{% static 'Miniblog/js/jquery.js' %}"></script>
+    <script src="{% static 'Miniblog/bootstrap.js' %}"></script>
+    <script src="{% static 'Miniblog/popper.js' %}"></script>
+</body>
+</html>

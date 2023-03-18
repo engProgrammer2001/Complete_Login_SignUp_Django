@@ -1,0 +1,29 @@
+{% extends 'Miniblog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container"> 
+<form action="" method="POST">
+    {% csrf_token %} 
+  <h1 class='contactHeading'>This is Contact page</h1>
+  <div class="mb-3 form-group">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="fname" class="form-label">First Name</label>
+    <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter First Name">
+  </div>
+  <div class="mb-3">
+    <label for="lname" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="lname" placeholder="Entet Last Name">
+  </div>
+  <div class="mb-3">
+    <label for="messages" class="form-label">Messages:</label>
+    <textarea class="form-control" name="messages" id="messages" rows="3" placeholder="Put Your Doubt Here"></textarea>
+    <input type="submit" value="submit" class="btn btn-warning">
+  </div>
+</form>
+</div>
+  
+{% endblock content %}
